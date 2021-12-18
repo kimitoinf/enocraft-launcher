@@ -1,0 +1,38 @@
+{
+  "name": "enocraft-launcher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron .",
+    "build": "electron-builder --win"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/limlnlog/enocraft-launcher.git"
+  },
+  "author": "YongJun Kim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/limlnlog/enocraft-launcher/issues"
+  },
+  "homepage": "https://github.com/limlnlog/enocraft-launcher#readme",
+  "devDependencies": {
+    "electron": "^16.0.5",
+    "electron-builder": "^22.14.5"
+  },
+  "build": {
+    "productName": "Enocraft Launcher",
+    "asar": true,
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": true,
+      "shortcutName": "Enocraft Launcher",
+      "artifactName": "Enocraft Launcher Setup.exe",
+      "uninstallDisplayName": "Enocraft Launcher"
+    }
+  }
+}

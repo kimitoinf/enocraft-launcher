@@ -1,0 +1,11 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+.nanum-font
+{
+	font-family: 'Nanum Gothic';
+}
+
+.container
+{
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
