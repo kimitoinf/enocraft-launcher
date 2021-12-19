@@ -2,7 +2,7 @@
   "name": "enocraft-launcher",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "test": "electron .",
     "build": "electron-builder --win"
@@ -25,7 +25,8 @@
     "productName": "Enocraft Launcher",
     "asar": true,
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "src/images/Icon.png"
     },
     "nsis": {
       "oneClick": true,
@@ -34,5 +35,10 @@
       "artifactName": "Enocraft Launcher Setup.exe",
       "uninstallDisplayName": "Enocraft Launcher"
     }
+  },
+  "dependencies": {
+    "electron-dl": "^3.3.0",
+    "minecraft-launcher-core": "^3.16.10",
+    "msmc": "^3.0.2"
   }
 }

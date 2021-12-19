@@ -4,8 +4,34 @@
 		<meta charset="UTF-8">
 		<title>Enocraft Launcher</title>
 		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="run.js"></script>
 	</head>
-	<body>
-		<p class="nanum-font">Enocraft Launcher</p>
+	<body class="parent">
+		<div class="container">
+			<div style="grid-column: 1/3; grid-row: 1/2;">
+				<img src="images/Logo.png" class="img">
+			</div>
+			<div style="grid-column: 1/2; grid-row: 2/3;">
+				<input type="text" placeholder="ID" name="ID" id="ID" class="nanum-font element">
+			</div>
+			<div style="grid-column: 1/2; grid-row: 3/4;">
+				<input type="password" placeholder="Password" name="Password" id="Password" class="nanum-font element">
+			</div>
+			<div style="grid-column: 2/3; grid-row: 2/4;">
+				<button type="submit" name="Login" id="Login" onclick="Login()" class="nanum-font element">Login</button>
+			</div>
+			<div style="grid-column: 2/3; grid-row: 4/6;">
+				<button type="submit" name="MicrosoftLogin" id="MicrosoftLogin" onclick="MicrosoftLogin()" class="nanum-font element">Microsoft Login</button>
+			</div>
+			<div style="grid-column: 1/2; grid-row: 4/6;">
+				<textarea placeholder="Log" id="Log" class="nanum-font element" style="font-size: 14px; resize: none;" readonly></textarea>
+				<script>
+					setInterval(function()
+					{
+						document.getElementById('Log').scrollTop = document.getElementById('Log').scrollHeight;
+					}, 500);
+				</script>
+			</div>
+		</div>
 	</body>
 </html>

@@ -2,10 +2,35 @@
 .nanum-font
 {
 	font-family: 'Nanum Gothic';
+	font-size: 30px;
+}
+
+.img
+{
+	image-rendering: -webkit-optimize-contrast;
+	width: 100%
+}
+
+.parent
+{
+	margin: 0;
+	padding: 0;
+	background-color: #8497B0;
 }
 
 .container
 {
 	display: grid;
-	grid-template-columns: 2fr 1fr;
+	grid-template-columns: 400px 200px;
+	grid-template-rows: 1fr repeat(4, 40px);
+	gap: 10px 10px;
+	place-content: center;
+}
+
+.element
+{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
