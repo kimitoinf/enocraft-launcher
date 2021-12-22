@@ -5,6 +5,7 @@
 		<title>Enocraft Launcher</title>
 		<link rel="stylesheet" href="style.css">
 		<script type="text/javascript" src="run.js"></script>
+		<script type="text/javascript" src="renderer.js"></script>
 	</head>
 	<body class="parent">
 		<div class="container">
@@ -25,12 +26,6 @@
 			</div>
 			<div style="grid-column: 1/2; grid-row: 4/6;">
 				<textarea placeholder="Log" id="Log" class="nanum-font element" style="font-size: 14px; resize: none;" readonly></textarea>
-				<script>
-					setInterval(function()
-					{
-						document.getElementById('Log').scrollTop = document.getElementById('Log').scrollHeight;
-					}, 500);
-				</script>
 			</div>
 		</div>
 	</body>

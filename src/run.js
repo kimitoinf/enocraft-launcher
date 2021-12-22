@@ -5,6 +5,8 @@ const fetch = require('node-fetch');
 const path = require('path');
 const os = require('os');
 const fs = require('fs');
+const admzip = require('adm-zip');
+const AdmZip = require('adm-zip');
 
 function Login()
 {
@@ -58,12 +60,15 @@ function Run(isSuccess, auth = null)
 		fs.createReadStream(path.join(os.tmpdir(), 'OptiFine_1.17.1_HD_U_H1_MOD.jar')).pipe(fs.createWriteStream(path.join(modsfolder, 'OptiFine_1.17.1_HD_U_H1_MOD.jar')));
 		fs.createReadStream(path.join(os.tmpdir(), 'wthit-forge-3.11.2.jar')).pipe(fs.createWriteStream(path.join(modsfolder, 'wthit-forge-3.11.2.jar')));
 		fs.createReadStream(path.join(os.tmpdir(), 'Xaeros_Minimap_FP21.22.3_Forge_1.17.1.jar')).pipe(fs.createWriteStream(path.join(modsfolder, 'Xaeros_Minimap_FP21.22.3_Forge_1.17.1.jar')));
+		var zip = new AdmZip(path.join(os.tmpdir(), 'openjdk-17.0.1_windows-x64_bin.zip'));
+		zip.extractAllTo(path.join(os.homedir(), 'enocraft'), true);
 		let option =
 		{
 			clientPackage: null,
 			authorization: auth,
 			root: path.join(os.homedir(), "enocraft"),
 			forge: path.join(os.tmpdir(), 'forge-installer.jar'),
+			javaPath: path.join(os.homedir(), 'enocraft', 'jdk-17.0.1', 'bin', 'java.exe'),
 			version:
 			{
 				number: "1.17.1",
@@ -82,6 +87,7 @@ function Run(isSuccess, auth = null)
 		launcher.launch(option);
 		launcher.on('debug', (e) => document.getElementById('Log').value += e);
 		launcher.on('data', (e) => document.getElementById('Log').value += e);
+		launcher.on('progress', (e) => e)
 	}
 	else
 	{

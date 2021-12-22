@@ -26,7 +26,7 @@
     "asar": true,
     "win": {
       "target": "nsis",
-      "icon": "src/images/Icon.png"
+      "icon": "./src/images/Icon.png"
     },
     "nsis": {
       "oneClick": true,
@@ -37,8 +37,9 @@
     }
   },
   "dependencies": {
-    "electron-dl": "^3.3.0",
+    "adm-zip": "^0.5.9",
     "minecraft-launcher-core": "^3.16.10",
-    "msmc": "^3.0.2"
+    "msmc": "^3.0.2",
+    "wget-improved": "^3.2.1"
   }
 }
